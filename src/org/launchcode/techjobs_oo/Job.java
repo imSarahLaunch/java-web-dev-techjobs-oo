@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -34,6 +35,24 @@ public class Job {
     //  match.
 
     @Override
+    public  String toString() {
+            String[] values = {this.getName(), this.getEmployer().getValue(), this.getLocation().getValue(), this.getPositionType().getValue(), this.getCoreCompetency().getValue()};
+            for(int i = 0; i < values.length; i++) {
+                if(values[i].equals("")) {
+                    values[i] = "Data not available";
+                }
+            }
+            return "\n" +
+                "\nID: " + id +
+                "\nName: " + values[0] +
+                "\nEmployer: " + values[1] +
+                "\nLocation: " + values[2] +
+                "\nPosition Type: " + values[3] +
+                "\nCore Competency: " + values[4] +
+                "\n";
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -44,6 +63,11 @@ public class Job {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public static void main(String[] args) {
+        Job job = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+        System.out.println(job);
     }
 
 
