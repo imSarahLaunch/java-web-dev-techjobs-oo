@@ -1,6 +1,5 @@
 package org.launchcode.techjobs_oo;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -64,12 +63,6 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    public static void main(String[] args) {
-        Job job = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
-        System.out.println(job);
-    }
-
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
