@@ -37,7 +37,8 @@ public class JobTest {
     @Test
     public void testReturnedStringStartsEndsWithBlankLine() {
         Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertTrue(test_job.toString().contains("\n" + "\n"));
+        assertTrue(test_job.toString().startsWith("\n"));
+        assertTrue(test_job.toString().endsWith("\n"));
     }
 
     @Test
